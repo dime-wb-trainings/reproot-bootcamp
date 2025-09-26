@@ -1,8 +1,11 @@
 
-    reproot , project("reproot-bootcamp-project-a") roots(" code") prefix("rr_bc_")
+    * Find root globals for this project
+    reproot , project("reproot-bootcamp-project-a") roots("code" /*data*/) prefix("rr_bc_a_")
 
-    global code "${rr_bc_code}/code"
-	global data "${rr_bc_code}/code"
-    
+    * Prepare easier globals
+    global code "${rr_bc_a_code}/code"
+	global data "${rr_bc_a_data}/data"
+
+    * Run code!
     do "${code}/summary_stats.do"
     do "${code}/output_success.do"
