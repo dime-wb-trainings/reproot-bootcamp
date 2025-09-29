@@ -1,3 +1,2 @@
-
-
-    noi di "You ran ProjectA with reproot!"
+	
+	noi di "You ran ProjectA with reproot!"

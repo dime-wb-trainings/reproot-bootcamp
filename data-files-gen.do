@@ -51,6 +51,14 @@ foreach project of local projects {
     save "`project_root'/data/raw/`project_short'_mock.dta", replace
 }
 
+* Set up root file for ProjectA
+local proja_rootfile "${zip_content_folder}/ProjectA/reproot.yaml"
+local proja_handle "projaroot"
+file open `proja_handle' using `proja_rootfile', write text
+file write `proja_handle' "project_name : reproot-bootcamp-project-a" _n "root_name    : data"
+file close `proja_handle'
+
+
 * Remove existing file
 global zipfile "${zip_folder}/reproot-bootcamp.zip"
 cap confirm file "${zipfile}"
